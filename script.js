@@ -389,6 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Clean state
             formStatus.className = 'form-status';
             formStatus.style.display = 'none';
+            formStatus.innerHTML = '';
 
             // Extract inputs
             const nameInput = document.getElementById('name');
@@ -396,23 +397,33 @@ document.addEventListener('DOMContentLoaded', () => {
             const subjectInput = document.getElementById('subject');
             const messageInput = document.getElementById('message');
 
+            const name = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const subject = subjectInput.value.trim();
+            const message = messageInput.value.trim();
+
             // Verification checks
-            if (!nameInput.value.trim() || !emailInput.value.trim() || !subjectInput.value.trim() || !messageInput.value.trim()) {
+            if (!name || !email || !subject || !message) {
                 showStatus('Please fill in all the contact form fields.', 'error');
                 return;
             }
 
-            if (!validateEmail(emailInput.value)) {
+            if (!validateEmail(email)) {
                 showStatus('Please enter a valid email address.', 'error');
                 return;
             }
 
-            // Lock submit button with animated sending state
+            const bodyText = `Hi Revanth Vardhan,\n\nYou have received a new contact message from your portfolio website:\n\n-------------------------------\nSender Name: ${name}\nSender Email: ${email}\nSubject: ${subject}\n-------------------------------\n\nMessage Details:\n${message}\n\nSent via Revanth's Glassmorphic Portfolio.`;
+
+            // Prepare both Gmail Web and Mailto links
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=yasalapurevanth97@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+            const mailtoUrl = `mailto:yasalapurevanth97@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+
+            // Visual feedback on button
             const originalText = submitBtn.innerHTML;
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `<span class="spinner" style="display: inline-block; width: 14px; height: 14px; border: 2px solid white; border-top-color: transparent; border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 0.5rem; vertical-align: middle;"></span> Launching Client...`;
+            submitBtn.innerHTML = `<span class="spinner" style="display: inline-block; width: 14px; height: 14px; border: 2px solid white; border-top-color: transparent; border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 0.5rem; vertical-align: middle;"></span> Opening Gmail...`;
 
-            // Inject custom spinner rotation keyframe if not present
             if (!document.getElementById('spinner-keyframe')) {
                 const styleSheet = document.createElement("style");
                 styleSheet.id = 'spinner-keyframe';
@@ -420,25 +431,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.head.appendChild(styleSheet);
             }
 
-            // Simulate server network latency and trigger mail client launch
-            setTimeout(() => {
-                const subject = subjectInput.value;
-                const name = nameInput.value;
-                const email = emailInput.value;
-                const message = messageInput.value;
+            // CRITICAL FIX FOR DESKTOP / LAPTOP BROWSERS:
+            // window.open must be triggered SYNCHRONOUSLY during the submit user gesture!
+            // When called inside a delayed setTimeout, desktop browsers (Chrome, Edge, Firefox)
+            // block it as an unprompted popup. Calling it synchronously preserves user activation.
+            let openedWindow = null;
+            try {
+                openedWindow = window.open(gmailUrl, '_blank');
+            } catch (err) {
+                openedWindow = null;
+            }
 
-                const bodyText = `Hi Revanth Vardhan,\n\nYou have received a new contact message from your portfolio website:\n\n-------------------------------\nSender Name: ${name}\nSender Email: ${email}\nSubject: ${subject}\n-------------------------------\n\nMessage Details:\n${message}\n\nSent via Revanth's Glassmorphic Portfolio.`;
-
-                // Launch direct Gmail compose in a new tab with pre-filled details
-                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=yasalapurevanth97@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
-                window.open(gmailUrl, '_blank');
-
-                // Success feedback
-                showStatus("Success! Your browser's Gmail compose client has been launched in a new tab with your message pre-filled. Please hit 'Send' inside Gmail to complete delivery directly to Revanth.", 'success');
+            if (openedWindow && !openedWindow.closed && typeof openedWindow.closed !== 'undefined') {
+                try { openedWindow.focus(); } catch (err) {}
+                showStatus("Success! Gmail compose has opened in a new tab with your message pre-filled. Please click 'Send' inside Gmail to deliver it directly to Revanth.", 'success');
                 contactForm.reset();
+            } else {
+                // If a popup blocker on laptop blocked the automatic new tab, provide direct fallback links
+                showStatus(
+                    `Popup blocked by your browser. <a href="${gmailUrl}" target="_blank" style="text-decoration: underline; font-weight: bold; margin: 0 4px;">Click here to open Gmail</a> or <a href="${mailtoUrl}" style="text-decoration: underline; font-weight: bold; margin: 0 4px;">open in Default Mail App</a>.`,
+                    'warning',
+                    true
+                );
+            }
+
+            setTimeout(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
-            }, 1500);
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            }, 1000);
         });
     }
 
@@ -447,9 +470,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return re.test(String(email).toLowerCase());
     }
 
-    function showStatus(message, type) {
-        formStatus.textContent = message;
-        formStatus.classList.add(type);
+    function showStatus(message, type, isHtml = false) {
+        if (isHtml) {
+            formStatus.innerHTML = message;
+        } else {
+            formStatus.textContent = message;
+        }
+        formStatus.className = `form-status ${type}`;
         formStatus.style.display = 'block';
     }
 

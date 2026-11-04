@@ -1768,6 +1768,19 @@ body.light-mode .form-input:focus {
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
+.form-status.warning {
+    display: block;
+    background: rgba(245, 158, 11, 0.12);
+    color: hsl(38, 92%, 50%);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.form-status a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
 .form-status.error {
     display: block;
     background: rgba(239, 68, 68, 0.1);
