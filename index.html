@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revanth Vardhan Yasalapu | Front-End Developer Portfolio</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Personal portfolio of Revanth Vardhan Yasalapu - Passionate Front-End Developer crafting modern, elegant, and responsive digital experiences with clean design and user-centric interfaces.">
+    <meta name="keywords" content="Revanth Vardhan Yasalapu, Front-End Developer, Web Developer, Portfolio, HTML5, CSS3, JavaScript, UI/UX, B.Tech, Ramachandra College of Engineering, Opt Forge, IEEE EMBS">
+    <meta name="author" content="Revanth Vardhan Yasalapu">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Revanth Vardhan Yasalapu | Front-End Developer">
+    <meta property="og:description" content="Personal portfolio of Revanth Vardhan Yasalapu. Modern, elegant, and high-performance front-end portfolio.">
+    <meta property="og:image" content="assets/images/profile.jpg">
+
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- =========================================================
+         NAVIGATION BAR (Sticky, Blur Backdrop, Responsive, Dark/Light Theme)
+         ========================================================= -->
+    <header class="navbar-wrapper" id="navbarWrapper">
+        <nav class="navbar" id="navbar">
+            <!-- Brand Logo -->
+            <a href="#hero" class="nav-brand" aria-label="Revanth Vardhan Homepage">
+                <span class="brand-monogram">RV</span>
+                <span class="brand-text">REVANTH <span class="gold-accent">VARDHAN</span></span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Controls: Theme Toggle & Mobile Hamburger -->
+            <div class="nav-controls-group">
+                <!-- Dark / Light Theme Toggle Button -->
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+                    <i data-lucide="moon" class="theme-icon moon-icon"></i>
+                    <i data-lucide="sun" class="theme-icon sun-icon"></i>
+                </button>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="mobile-drawer-header">
+            <span class="brand-text">REVANTH <span class="gold-accent">VARDHAN</span></span>
+            <div class="mobile-header-actions">
+                <button class="theme-toggle-btn mobile-theme-btn" id="mobileThemeToggle" aria-label="Toggle theme">
+                    <i data-lucide="moon" class="theme-icon moon-icon"></i>
+                    <i data-lucide="sun" class="theme-icon sun-icon"></i>
+                </button>
+                <button class="mobile-close" id="mobileClose" aria-label="Close navigation menu">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+            <li><a href="#education" class="mobile-nav-link">Education</a></li>
+            <li><a href="#achievements" class="mobile-nav-link">Achievements</a></li>
+            <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+            <div class="mobile-socials">
+                <!-- LinkedIn Realistic Logo -->
+                <a href="https://www.linkedin.com/in/revanth-vardhan-yasalapu-7740693ba/" target="_blank" rel="noopener noreferrer" class="realistic-logo-btn" aria-label="LinkedIn" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" class="realistic-svg" width="22" height="22">
+                        <path fill="#0A66C2" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <!-- Instagram Realistic Gradient Logo -->
+                <a href="https://www.instagram.com/mrrevanth79?cplk=MXFodW4wbGR5MWtvNg==" target="_blank" rel="noopener noreferrer" class="realistic-logo-btn" aria-label="Instagram" title="Instagram">
+                    <svg viewBox="0 0 24 24" class="realistic-svg" width="22" height="22">
+                        <defs>
+                            <linearGradient id="ig-grad-mobile" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#FFD600"/>
+                                <stop offset="25%" stop-color="#FF7A00"/>
+                                <stop offset="50%" stop-color="#FF0069"/>
+                                <stop offset="75%" stop-color="#D300C5"/>
+                                <stop offset="100%" stop-color="#7638FA"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="24" height="24" rx="6.5" fill="url(#ig-grad-mobile)"/>
+                        <circle cx="12" cy="12" r="4.3" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+                        <rect x="4" y="4" width="16" height="16" rx="4.5" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+                        <circle cx="17.2" cy="6.8" r="1.1" fill="#ffffff"/>
+                    </svg>
+                </a>
+                <!-- GitHub Realistic Logo -->
+                <a href="https://github.com/yasalapurevanth97-coder" target="_blank" rel="noopener noreferrer" class="realistic-logo-btn" aria-label="GitHub" title="GitHub">
+                    <svg viewBox="0 0 24 24" class="realistic-svg" width="22" height="22">
+                        <circle cx="12" cy="12" r="12" fill="#181717"/>
+                        <path fill="#ffffff" d="M12 2.2c-5.4 0-9.8 4.4-9.8 9.8 0 4.3 2.8 8 6.7 9.3.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.3-3.3-1.3-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.2-4.5-1.1-4.5-4.8 0-1.1.4-1.9 1-2.6-.1-.3-.4-1.2.1-2.6 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.5-.3.8 0 1.7.1 2.5.3 1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.6 0 3.7-2.3 4.6-4.5 4.8.4.3.7.9.7 1.8v2.7c0 .3.2.6.7.5 3.9-1.3 6.7-5 6.7-9.3 0-5.4-4.4-9.8-9.8-9.8z"/>
+                    </svg>
+                </a>
+                <!-- Gmail Realistic 4-Color Logo (Click to Compose) -->
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yasalapurevanth97@gmail.com" target="_blank" rel="noopener noreferrer" class="realistic-logo-btn gmail-direct-btn" data-email="yasalapurevanth97@gmail.com" aria-label="Send Email to Revanth" title="Send Email via Gmail">
+                    <svg viewBox="52 31 88 88" class="realistic-svg" width="22" height="22">
+                        <path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
+                        <path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/>
+                        <path fill="#fbbc04" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/>
+                        <path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92v16H72"/>
+                        <path fill="#c5221f" d="M52 59v15l20-15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <main>
+        <!-- =========================================================
+             HERO SECTION (Featuring REVANTH VARDHAN YASALAPU Heading)
+             ========================================================= -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                <!-- Left Column: Typography & CTAs -->
+                <div class="hero-content">
+                    <!-- Small Golden Badge -->
+                    <div class="badge-wrapper animate-fade-in" style="--delay: 0.1s;">
+                        <span class="golden-badge">
+                            <span class="badge-dot"></span>
+                            FRONT-END DEVELOPER
+                        </span>
+                    </div>
+
+                    <!-- Main Heading: REVANTH VARDHAN YASALAPU (All Black Bold Only) -->
+                    <h1 class="hero-heading animate-fade-in hero-name-title" style="--delay: 0.2s;">
+                        REVANTH<br>
+                        VARDHAN<br>
+                        YASALAPU
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="hero-description animate-fade-in" style="--delay: 0.3s;">
+                        I'm <strong class="name-black-bold">Revanth Vardhan Yasalapu</strong>, a passionate Front-End Developer focused on creating modern, responsive, and visually engaging websites. I enjoy transforming creative ideas into meaningful digital experiences through clean design and user-friendly interfaces.
+                    </p>
+
+                    <!-- Buttons Group -->
+                    <div class="hero-cta-group animate-fade-in" style="--delay: 0.4s;">
+                        <a href="#projects" class="btn btn-navy">
+                            <span>View My Projects</span>
+                            <i data-lucide="arrow-right" class="btn-icon"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <span>Get In Touch</span>
+                            <i data-lucide="mail" class="btn-icon"></i>
+                        </a>
+                    </div>
+
+                    <!-- Key Metrics & Realistic Social Fast Links -->
+                    <div class="hero-highlights animate-fade-in" style="--delay: 0.5s;">
+                        <div class="highlight-item">
+                            <span class="highlight-number">9.03</span>
+                            <span class="highlight-label">B.Tech CGPA</span>
+                        </div>
+                        <div class="highlight-divider"></div>
+                        <div class="highlight-item">
+                            <span class="highlight-number">100%</span>
+                            <span class="highlight-label">Responsive Design</span>
+                        </div>
+                        <div class="highlight-divider"></div>
+                        
+                        <!-- Realistic Social Logos Row -->
+                        <div class="highlight-socials">
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/revanth-vardhan-yasalapu-7740693ba/" target="_blank" rel="noopener noreferrer" class="social-circle realistic-circle" title="LinkedIn" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" width="20" height="20">
+                                    <path fill="#0A66C2" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/mrrevanth79?cplk=MXFodW4wbGR5MWtvNg==" target="_blank" rel="noopener noreferrer" class="social-circle realistic-circle" title="Instagram (@mrrevanth79)" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" width="20" height="20">
+                                    <defs>
+                                        <linearGradient id="ig-grad-hero" x1="0%" y1="100%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#FFD600"/>
+                                            <stop offset="25%" stop-color="#FF7A00"/>
+                                            <stop offset="50%" stop-color="#FF0069"/>
+                                            <stop offset="75%" stop-color="#D300C5"/>
+                                            <stop offset="100%" stop-color="#7638FA"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="24" height="24" rx="6.5" fill="url(#ig-grad-hero)"/>
+                                    <circle cx="12" cy="12" r="4.3" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+                                    <rect x="4" y="4" width="16" height="16" rx="4.5" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+                                    <circle cx="17.2" cy="6.8" r="1.1" fill="#ffffff"/>
+                                </svg>
+                            </a>
+                            <!-- GitHub -->
+                            <a href="https://github.com/yasalapurevanth97-coder" target="_blank" rel="noopener noreferrer" class="social-circle realistic-circle" title="GitHub" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" width="20" height="20">
+                                    <circle cx="12" cy="12" r="12" fill="#181717"/>
+                                    <path fill="#ffffff" d="M12 2.2c-5.4 0-9.8 4.4-9.8 9.8 0 4.3 2.8 8 6.7 9.3.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.3-3.3-1.3-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.2-4.5-1.1-4.5-4.8 0-1.1.4-1.9 1-2.6-.1-.3-.4-1.2.1-2.6 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.5-.3.8 0 1.7.1 2.5.3 1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.6 0 3.7-2.3 4.6-4.5 4.8.4.3.7.9.7 1.8v2.7c0 .3.2.6.7.5 3.9-1.3 6.7-5 6.7-9.3 0-5.4-4.4-9.8-9.8-9.8z"/>
+                                </svg>
+                            </a>
+                            <!-- Gmail (Direct Send/Compose) -->
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yasalapurevanth97@gmail.com" target="_blank" rel="noopener noreferrer" class="social-circle realistic-circle gmail-direct-btn" data-email="yasalapurevanth97@gmail.com" title="Open Gmail & Send Message" aria-label="Send Email">
+                                <svg viewBox="52 31 88 88" width="20" height="20">
+                                    <path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
+                                    <path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/>
+                                    <path fill="#fbbc04" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/>
+                                    <path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92v16H72"/>
+                                    <path fill="#c5221f" d="M52 59v15l20-15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Professional Portrait Photograph -->
+                <div class="hero-visual animate-fade-in" style="--delay: 0.3s;">
+                    <div class="portrait-card">
+                        <!-- Decorative Architectural Accents -->
+                        <div class="portrait-backdrop-frame"></div>
+                        <div class="portrait-gold-corner top-left"></div>
+                        <div class="portrait-gold-corner bottom-right"></div>
+                        
+                        <div class="portrait-image-wrapper">
+                            <img src="assets/images/profile.jpg" 
+                                 alt="Revanth Vardhan Yasalapu - Front-End Developer" 
+                                 class="portrait-photo"
+                                 id="heroPortrait"
+                                 loading="eager"
+                                 onerror="this.onerror=null; this.src='assets/images/profile-backup.jpg';">
+                            <div class="portrait-sheen"></div>
+                        </div>
+
+                        <!-- Floating Golden Tag / Status -->
+                        <div class="portrait-floating-badge">
+                            <span class="pulse-indicator"></span>
+                            <div class="badge-text-group">
+                                <span class="badge-title">Open to Opportunities</span>
+                                <span class="badge-subtitle">Front-End & UI Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <a href="#about" class="scroll-down-hint" aria-label="Scroll to About section">
+                <span class="scroll-label">Explore More</span>
+                <i data-lucide="chevron-down" class="scroll-chevron"></i>
+            </a>
+        </section>
+
+
+        <!-- =========================================================
+             ABOUT ME SECTION (With Prominently Highlighted Name)
+             ========================================================= -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">BIOGRAPHY & VALUES</span>
+                    <h2 class="section-heading">A Little <span class="gold-serif-italic">About Me.</span></h2>
+                    <div class="heading-gold-line"></div>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Left Column: Story & Philosophy with Name Highlight -->
+                    <div class="about-text-column reveal-on-scroll">
+                        <h3 class="about-lead">
+                            Hi, I am <strong class="name-black-bold">REVANTH VARDHAN YASALAPU</strong> — Crafting seamless digital interfaces where <span class="serif-accent">clean aesthetics</span> meet robust engineering.
+                        </h3>
+                        <p class="paragraph">
+                            I am a front-end developer driven by a profound appreciation for typography, visual hierarchy, and intuitive user interactions. Currently pursuing my B.Tech in Computer Science & Engineering (Artificial Intelligence & Data Science) at Ramachandra College of Engineering with an exceptional academic record of <strong>9.03 CGPA</strong>, I bridge the worlds of logical software principles and modern design sensibility.
+                        </p>
+                        <p class="paragraph">
+                            My focus centers on developing high-performance, accessible, and responsive web applications. Whether crafting bespoke animations, organizing reusable component structures, or optimizing asset delivery, I believe that every line of code should enhance the human experience on the web.
+                        </p>
+                        
+                        <!-- Value Pillars -->
+                        <div class="value-pillars">
+                            <div class="pillar-item">
+                                <div class="pillar-icon">
+                                    <i data-lucide="sparkles"></i>
+                                </div>
+                                <div class="pillar-text">
+                                    <h4>Pixel-Perfect Design</h4>
+                                    <p>Translating creative visions into responsive, elegant layouts with meticulous attention to detail.</p>
+                                </div>
+                            </div>
+                            <div class="pillar-item">
+                                <div class="pillar-icon">
+                                    <i data-lucide="zap"></i>
+                                </div>
+                                <div class="pillar-text">
+                                    <h4>Performance First</h4>
+                                    <p>Writing lean, semantic HTML, modern CSS, and efficient JavaScript for lightning-fast load times.</p>
+                                </div>
+                            </div>
+                            <div class="pillar-item">
+                                <div class="pillar-icon">
+                                    <i data-lucide="heart-handshake"></i>
+                                </div>
+                                <div class="pillar-text">
+                                    <h4>User-Centric Empathy</h4>
+                                    <p>Prioritizing accessibility, mobile-friendly ergonomics, and frictionless navigation across every screen.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Row -->
+                        <div class="about-actions">
+                            <a href="#contact" class="btn btn-navy">
+                                <span>Let's Discuss Projects</span>
+                                <i data-lucide="arrow-right" class="btn-icon"></i>
+                            </a>
+                            <a href="#skills" class="btn btn-subtle">
+                                <span>Explore My Skills</span>
+                                <i data-lucide="code-2" class="btn-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Profile Highlights & Fact Card -->
+                    <div class="about-card-column reveal-on-scroll">
+                        <div class="luxury-card about-summary-card">
+                            <div class="card-gold-crest">
+                                <i data-lucide="award"></i>
+                            </div>
+                            <h3 class="card-title">Professional Snapshot</h3>
+                            
+                            <ul class="summary-list">
+                                <li class="summary-item">
+                                    <span class="item-label">Name</span>
+                                    <span class="item-value name-black-bold">REVANTH VARDHAN YASALAPU</span>
+                                </li>
+                                <li class="summary-item">
+                                    <span class="item-label">Specialization</span>
+                                    <span class="item-value highlight-gold">Front-End Web Development</span>
+                                </li>
+                                <li class="summary-item">
+                                    <span class="item-label">Degree</span>
+                                    <span class="item-value">B.Tech (CSE - AI & DS)</span>
+                                </li>
+                                <li class="summary-item">
+                                    <span class="item-label">Institution</span>
+                                    <span class="item-value">Ramachandra College of Eng.</span>
+                                </li>
+                                <li class="summary-item">
+                                    <span class="item-label">Academic Merit</span>
+                                    <span class="item-value badge-score">9.03 CGPA</span>
+                                </li>
+                                <li class="summary-item">
+                                    <span class="item-label">Location</span>
+                                    <span class="item-value">Andhra Pradesh, India</span>
+                                </li>
+                                <li class="summary-item">
+                                    <span class="item-label">Availability</span>
+                                    <span class="item-value highlight-available">Open for Hire & Freelance</span>
+                                </li>
+                            </ul>
+
+                            <div class="card-footer-quote">
+                                <p>"Good design is obvious. Great design is transparent."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             FEATURED PROJECTS SECTION (Including Project MediCore)
+             ========================================================= -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">CURATED PORTFOLIO</span>
+                    <h2 class="section-heading">Featured <span class="gold-serif-italic">Projects.</span></h2>
+                    <div class="heading-gold-line"></div>
+                    <p class="section-subtitle">
+                        A showcase of responsive web applications, interactive clinical portals, and engineered platforms built with modern web technologies.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: MediCore -->
+                    <article class="project-card reveal-on-scroll">
+                        <div class="project-media">
+                            <img src="assets/images/project-medicore.jpg" 
+                                 alt="MediCore Smart Healthcare and Clinical Patient Management Portal" 
+                                 class="project-image"
+                                 loading="lazy">
+                            <div class="project-media-overlay">
+                                <span class="media-category-badge">HEALTHCARE PLATFORM</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tag-row">
+                                <span class="tag-pill">Clinical Management</span>
+                                <span class="tag-pill">Patient Care UI</span>
+                                <span class="tag-pill">Digital Health</span>
+                            </div>
+                            <h3 class="project-title">MediCore – Smart Healthcare Portal</h3>
+                            <p class="project-description">
+                                A comprehensive digital healthcare and clinic management system designed with an empathetic, accessible interface. Features doctor consultation scheduling, patient medical history tracking, digital prescriptions, and emergency diagnostic records with privacy-first workflows.
+                            </p>
+                            <div class="tech-stack-row">
+                                <span class="tech-chip">Front-End UI</span>
+                                <span class="tech-chip">JavaScript ES6+</span>
+                                <span class="tech-chip">Responsive Design</span>
+                                <span class="tech-chip">REST APIs</span>
+                                <span class="tech-chip">Electronic Health Records</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/yasalapurevanth97-coder" target="_blank" rel="noopener noreferrer" class="btn btn-card-primary">
+                                    <span>Explore System</span>
+                                    <i data-lucide="external-link" class="btn-icon-sm"></i>
+                                </a>
+                                <a href="https://github.com/yasalapurevanth97-coder" target="_blank" rel="noopener noreferrer" class="btn btn-card-secondary">
+                                    <i data-lucide="github" class="btn-icon-sm"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Password Checker -->
+                    <article class="project-card reveal-on-scroll">
+                        <div class="project-media">
+                            <img src="assets/images/project-password-checker.jpg" 
+                                 alt="Password Security and Cryptographic Entropy Analyzer Preview" 
+                                 class="project-image"
+                                 loading="lazy">
+                            <div class="project-media-overlay">
+                                <span class="media-category-badge">CYBERSECURITY UTILITY</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tag-row">
+                                <span class="tag-pill">Front-End App</span>
+                                <span class="tag-pill">NIST Standards</span>
+                                <span class="tag-pill">Client-Side Security</span>
+                            </div>
+                            <h3 class="project-title">Password Security & Entropy Analyzer</h3>
+                            <p class="project-description">
+                                An interactive cryptographic password evaluation system measuring bit-entropy against strict NIST security guidelines. Features instant pattern detection, repetition penalties, and estimated crack times with zero server-side exposure.
+                            </p>
+                            <div class="tech-stack-row">
+                                <span class="tech-chip">JavaScript ES6+</span>
+                                <span class="tech-chip">Entropy Calculations</span>
+                                <span class="tech-chip">Regex Heuristics</span>
+                                <span class="tech-chip">Responsive CSS</span>
+                                <span class="tech-chip">Vercel</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://password-checker-xi-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-card-primary">
+                                    <span>Live Demo</span>
+                                    <i data-lucide="external-link" class="btn-icon-sm"></i>
+                                </a>
+                                <a href="https://github.com/yasalapurevanth97-coder" target="_blank" rel="noopener noreferrer" class="btn btn-card-secondary">
+                                    <i data-lucide="github" class="btn-icon-sm"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Mandi Mitra -->
+                    <article class="project-card reveal-on-scroll">
+                        <div class="project-media">
+                            <img src="assets/images/project-mandi-mitra.jpg" 
+                                 alt="Mandi Mitra Agricultural Trading Hub Preview" 
+                                 class="project-image"
+                                 loading="lazy">
+                            <div class="project-media-overlay">
+                                <span class="media-category-badge">AGRI-TECH MARKETPLACE</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tag-row">
+                                <span class="tag-pill">Full-Stack Architecture</span>
+                                <span class="tag-pill">APMC Live Rates</span>
+                                <span class="tag-pill">Direct Trading</span>
+                            </div>
+                            <h3 class="project-title">Mandi Mitra – Smart Produce Platform</h3>
+                            <p class="project-description">
+                                A comprehensive agricultural marketplace connecting produce farmers directly with APMC wholesale buyers. Provides live market rate tracking, transparent bidding, and streamlined digital weight slip management to eliminate middleman margins.
+                            </p>
+                            <div class="tech-stack-row">
+                                <span class="tech-chip">Responsive Web UI</span>
+                                <span class="tech-chip">Java</span>
+                                <span class="tech-chip">Spring Boot</span>
+                                <span class="tech-chip">Oracle SQL</span>
+                                <span class="tech-chip">REST APIs</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7517505258680553472/" target="_blank" rel="noopener noreferrer" class="btn btn-card-primary">
+                                    <span>View Case Study</span>
+                                    <i data-lucide="external-link" class="btn-icon-sm"></i>
+                                </a>
+                                <a href="https://github.com/yasalapurevanth97-coder" target="_blank" rel="noopener noreferrer" class="btn btn-card-secondary">
+                                    <i data-lucide="github" class="btn-icon-sm"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: EduTech Student Dashboard -->
+                    <article class="project-card reveal-on-scroll">
+                        <div class="project-media">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" 
+                                 alt="EduTech Student Analytics Dashboard Preview" 
+                                 class="project-image"
+                                 loading="lazy">
+                            <div class="project-media-overlay">
+                                <span class="media-category-badge">EDTECH & ANALYTICS</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tag-row">
+                                <span class="tag-pill">Analytics UI</span>
+                                <span class="tag-pill">Data Visualizations</span>
+                                <span class="tag-pill">Role Management</span>
+                            </div>
+                            <h3 class="project-title">EduTech Student Portal & Analytics</h3>
+                            <p class="project-description">
+                                A centralized academic performance portal delivering real-time course progress tracking, GPA projections, attendance threshold alerts, and examination schedules with clean, responsive data visualizers.
+                            </p>
+                            <div class="tech-stack-row">
+                                <span class="tech-chip">HTML5 / Modern CSS</span>
+                                <span class="tech-chip">JavaScript</span>
+                                <span class="tech-chip">Chart Components</span>
+                                <span class="tech-chip">Spring Boot API</span>
+                                <span class="tech-chip">Oracle DB</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7442977299811196929/" target="_blank" rel="noopener noreferrer" class="btn btn-card-primary">
+                                    <span>Architecture Overview</span>
+                                    <i data-lucide="external-link" class="btn-icon-sm"></i>
+                                </a>
+                                <a href="https://github.com/yasalapurevanth97-coder" target="_blank" rel="noopener noreferrer" class="btn btn-card-secondary">
+                                    <i data-lucide="github" class="btn-icon-sm"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Callout Banner -->
+                <div class="projects-cta-banner reveal-on-scroll">
+                    <div class="cta-banner-text">
+                        <h3>Interested in collaborating on a custom web project?</h3>
+                        <p>I bring clean code, responsive design, and attention to detail to every project.</p>
+                    </div>
+                    <a href="#contact" class="btn btn-gold">
+                        <span>Initiate a Conversation</span>
+                        <i data-lucide="arrow-right" class="btn-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             EDUCATION & ACADEMIC MILESTONES SECTION
+             ========================================================= -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">ACADEMIC FOUNDATION</span>
+                    <h2 class="section-heading">Education & <span class="gold-serif-italic">Qualifications.</span></h2>
+                    <div class="heading-gold-line"></div>
+                    <p class="section-subtitle">
+                        A rigorous academic background in computer science, mathematics, and structured logic.
+                    </p>
+                </div>
+
+                <!-- Vertical Timeline -->
+                <div class="timeline-container">
+                    <!-- Timeline Item 1: B.Tech (2025 - Present) -->
+                    <div class="timeline-card-wrapper reveal-on-scroll">
+                        <div class="timeline-marker">
+                            <span class="marker-dot"></span>
+                            <span class="marker-line"></span>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-badge-row">
+                                <span class="timeline-level">Undergraduate Degree</span>
+                                <span class="timeline-score-badge">9.03 CGPA</span>
+                            </div>
+                            <h3 class="timeline-institution">Ramachandra College of Engineering</h3>
+                            <div class="timeline-meta">
+                                <span class="timeline-degree">B.Tech – Computer Science & Engineering (AI & Data Science)</span>
+                                <span class="timeline-status">2025 – Present</span>
+                            </div>
+                            <p class="timeline-description">
+                                Consistently maintaining an elite academic grade of 9.03 CGPA. Specializing in Web Development Technologies, C & Object-Oriented Software Principles, Relational Databases, and modern interface design. Actively involved in technical campus initiatives and project exhibitions.
+                            </p>
+                            <div class="timeline-highlights">
+                                <span class="highlight-tag"><i data-lucide="check"></i> 9.03 Academic Grade</span>
+                                <span class="highlight-tag"><i data-lucide="check"></i> Web Technologies Focus</span>
+                                <span class="highlight-tag"><i data-lucide="check"></i> AI & Data Science Core</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2: Intermediate (2023 - 2025) -->
+                    <div class="timeline-card-wrapper reveal-on-scroll">
+                        <div class="timeline-marker">
+                            <span class="marker-dot"></span>
+                            <span class="marker-line"></span>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-badge-row">
+                                <span class="timeline-level">Intermediate (10+2)</span>
+                                <span class="timeline-score-badge">94.6% Grade</span>
+                            </div>
+                            <h3 class="timeline-institution">Sri Chaitanya</h3>
+                            <div class="timeline-meta">
+                                <span class="timeline-degree">MPC Stream (Mathematics, Physics & Chemistry)</span>
+                                <span class="timeline-status">2023 – 2025</span>
+                            </div>
+                            <p class="timeline-description">
+                                Completed Intermediate with an outstanding 94.6% score. Built comprehensive skills in mathematical analysis, procedural reasoning, and scientific methodology.
+                            </p>
+                            <div class="timeline-highlights">
+                                <span class="highlight-tag"><i data-lucide="check"></i> 94.6% Distinction</span>
+                                <span class="highlight-tag"><i data-lucide="check"></i> Mathematical Rigor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3: Schooling -->
+                    <div class="timeline-card-wrapper reveal-on-scroll">
+                        <div class="timeline-marker">
+                            <span class="marker-dot"></span>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-badge-row">
+                                <span class="timeline-level">Secondary Schooling (SSC)</span>
+                                <span class="timeline-score-badge">91.5% Grade</span>
+                            </div>
+                            <h3 class="timeline-institution">BGTO School</h3>
+                            <div class="timeline-meta">
+                                <span class="timeline-degree">Secondary School Certificate</span>
+                                <span class="timeline-status">Distinction Honors</span>
+                            </div>
+                            <p class="timeline-description">
+                                Built solid foundations in science, mathematical principles, and analytical curiosity, igniting a lifelong passion for computer technology and visual problem solving.
+                            </p>
+                            <div class="timeline-highlights">
+                                <span class="highlight-tag"><i data-lucide="check"></i> 91.5% Academic Score</span>
+                                <span class="highlight-tag"><i data-lucide="check"></i> Strong Foundation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             SPECIAL SECTION: HONORS, HACKATHONS & ACHIEVEMENTS
+             ========================================================= -->
+        <section id="achievements" class="section achievements-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">COMPETITIVE RECOGNITION</span>
+                    <h2 class="section-heading">Honors & <span class="gold-serif-italic">Achievements.</span></h2>
+                    <div class="heading-gold-line"></div>
+                    <p class="section-subtitle">
+                        Award-winning hackathon participations, inter-collegiate coding competitions, and recognized project exhibitions.
+                    </p>
+                </div>
+
+                <div class="achievements-grid">
+                    <!-- Achievement 1: OPT FORGE Hackathon -->
+                    <div class="achievement-card-premium reveal-on-scroll">
+                        <div class="achievement-trophy-badge">
+                            <i data-lucide="trophy"></i>
+                            <span>3RD PRIZE</span>
+                        </div>
+                        <div class="achievement-body">
+                            <span class="event-type-tag">IEEE EMBS HACKATHON</span>
+                            <h3 class="achievement-title">OPT FORGE Hackathon</h3>
+                            <div class="achievement-venue">
+                                <i data-lucide="map-pin"></i>
+                                <span>Vardhaman College of Engineering, Hyderabad</span>
+                            </div>
+                            <p class="achievement-desc">
+                                Secured <strong>3rd Prize Winner</strong> standing in the high-intensity <em>OPT FORGE</em> hackathon organized by IEEE EMBS at Vardhaman College of Engineering, developing an innovative prototype under rigorous evaluation.
+                            </p>
+                            <div class="achievement-badge-pill">
+                                <span>🥉 3rd Prize Laureate • IEEE EMBS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 2: RHIT Vijayawada -->
+                    <div class="achievement-card-premium reveal-on-scroll">
+                        <div class="achievement-trophy-badge">
+                            <i data-lucide="award"></i>
+                            <span>3RD PRIZE</span>
+                        </div>
+                        <div class="achievement-body">
+                            <span class="event-type-tag">INTER-COLLEGIATE CONTEST</span>
+                            <h3 class="achievement-title">RHIT Vijayawada Competition</h3>
+                            <div class="achievement-venue">
+                                <i data-lucide="map-pin"></i>
+                                <span>RHIT, Vijayawada</span>
+                            </div>
+                            <p class="achievement-desc">
+                                Awarded <strong>3rd Prize</strong> for technical innovation, problem analysis, and rapid digital execution competing against inter-collegiate engineering students.
+                            </p>
+                            <div class="achievement-badge-pill">
+                                <span>🥉 3rd Prize Winner • RHIT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 3: TECHIVE (LBRCE) -->
+                    <div class="achievement-card-premium reveal-on-scroll">
+                        <div class="achievement-trophy-badge gold-crest">
+                            <i data-lucide="zap"></i>
+                            <span>TECHIVE</span>
+                        </div>
+                        <div class="achievement-body">
+                            <span class="event-type-tag">NATIONAL TECHNICAL SYMPOSIUM</span>
+                            <h3 class="achievement-title">TECHIVE Technical Symposium</h3>
+                            <div class="achievement-venue">
+                                <i data-lucide="map-pin"></i>
+                                <span>Lakireddy Bali Reddy College of Engineering (LBRCE)</span>
+                            </div>
+                            <p class="achievement-desc">
+                                Recognized participant and achiever at <em>TECHIVE</em>, proving technical competencies in software design, algorithmic reasoning, and front-end presentation challenges.
+                            </p>
+                            <div class="achievement-badge-pill">
+                                <span>✦ Technical Excellence • LBRCE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 4: PRAKALP (Ramachandra College of Engineering) -->
+                    <div class="achievement-card-premium reveal-on-scroll">
+                        <div class="achievement-trophy-badge gold-crest">
+                            <i data-lucide="star"></i>
+                            <span>PRAKALP</span>
+                        </div>
+                        <div class="achievement-body">
+                            <span class="event-type-tag">ANNUAL PROJECT EXPO</span>
+                            <h3 class="achievement-title">PRAKALP Project Exhibition</h3>
+                            <div class="achievement-venue">
+                                <i data-lucide="map-pin"></i>
+                                <span>Ramachandra College of Engineering</span>
+                            </div>
+                            <p class="achievement-desc">
+                                Commended for high-quality project development and interactive interface architecture during the annual <em>PRAKALP</em> technical symposium, presenting functional solutions to faculty and industry evaluators.
+                            </p>
+                            <div class="achievement-badge-pill">
+                                <span>✦ Project Distinction • PRAKALP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             SKILLS & DIGITAL CREATIVE TOOLKIT SECTION
+             ========================================================= -->
+        <section id="skills" class="section toolkit-section">
+            <div class="container">
+                <!-- Section Header matching Image 1: "My Digital Creative Toolkit✦" -->
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">DIGITAL TOOLKIT & PLATFORMS</span>
+                    <h2 class="toolkit-main-heading">
+                        My Digital <span class="gold-toolkit-text">Creative Toolkit</span><span class="gold-sparkle">✦</span>
+                    </h2>
+                    <p class="toolkit-subtitle">
+                        The genuine software, AI engines, and developer platforms powering my daily design, coding, and content workflows.
+                    </p>
+                </div>
+
+                <!-- Creative Toolkit Cards Grid (Clean Headings Only, Matter Removed) -->
+                <div class="toolkit-cards-grid">
+                    <!-- 1. Front-End Developer -->
+                    <div class="toolkit-card reveal-on-scroll">
+                        <div class="toolkit-card-header">
+                            <div class="toolkit-brand-icon web-dev-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#E34F26" d="M1.5 0h21l-1.9 21.2L12 24l-8.6-2.8L1.5 0z"/>
+                                    <path fill="#EF652A" d="M12 2v20l6.9-2.2L20.5 2H12z"/>
+                                    <path fill="#ECECEC" d="M12 9.2H8.3l-.3-3.2h8l.3-3H4.4l.8 9.2H12V9.2zm0 6.6l-3.8-1-.3-3.2H4.9l.4 4.8 6.7 1.9v-2.5z"/>
+                                    <path fill="#ffffff" d="M12 9.2v3h3.5l-.3 3.6-3.2.9v2.5l6.7-1.9.9-10.1H12v2z"/>
+                                </svg>
+                            </div>
+                            <span class="toolkit-category-pill">PRIMARY ROLE</span>
+                        </div>
+                        <h3 class="toolkit-card-title">Front-End Developer</h3>
+                    </div>
+
+                    <!-- 2. UI/UX Designer -->
+                    <div class="toolkit-card reveal-on-scroll">
+                        <div class="toolkit-card-header">
+                            <div class="toolkit-brand-icon uiux-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#F24E1E" d="M6 12a3 3 0 1 1 0-6h6v6H6z"/>
+                                    <path fill="#FF7262" d="M12 6h6a3 3 0 1 1-3 3 3 3 0 0 1-3-3z"/>
+                                    <path fill="#A259FF" d="M12 12h6a3 3 0 1 1-3 3 3 3 0 0 1-3-3z"/>
+                                    <path fill="#1ABCFE" d="M6 18a3 3 0 0 1 3-3h3v3a3 3 0 1 1-6 0z"/>
+                                    <path fill="#0ACF83" d="M6 12a3 3 0 0 1 3-3h3v6H9a3 3 0 0 1-3-3z"/>
+                                </svg>
+                            </div>
+                            <span class="toolkit-category-pill">CREATIVE DESIGN</span>
+                        </div>
+                        <h3 class="toolkit-card-title">UI/UX Designer</h3>
+                    </div>
+
+                    <!-- 3. Anti Gravity (Requested Addition) -->
+                    <div class="toolkit-card reveal-on-scroll">
+                        <div class="toolkit-card-header">
+                            <div class="toolkit-brand-icon antigravity-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28">
+                                    <defs>
+                                        <linearGradient id="ag-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#4285F4"/>
+                                            <stop offset="50%" stop-color="#A855F7"/>
+                                            <stop offset="100%" stop-color="#F59E0B"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="12" cy="12" r="10" fill="none" stroke="url(#ag-grad)" stroke-width="2"/>
+                                    <polygon points="12,4 18,17 6,17" fill="none" stroke="url(#ag-grad)" stroke-width="2" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="11.5" r="2.4" fill="url(#ag-grad)"/>
+                                </svg>
+                            </div>
+                            <span class="toolkit-category-pill">AI & AGENTIC</span>
+                        </div>
+                        <h3 class="toolkit-card-title">Anti Gravity</h3>
+                    </div>
+
+                    <!-- 4. C Language -->
+                    <div class="toolkit-card reveal-on-scroll">
+                        <div class="toolkit-card-header">
+                            <div class="toolkit-brand-icon c-lang-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#659AD2" d="M12 1L2.5 6.5v11L12 23l9.5-5.5v-11L12 1zm0 2.3l7.5 4.3v8.8L12 20.7 4.5 16.4V7.6L12 3.3z"/>
+                                    <path fill="#03599C" d="M12 6.5c-3 0-5.5 2.5-5.5 5.5s2.5 5.5 5.5 5.5c2.3 0 4.2-1.4 5-3.4h-2.3c-.6 1-1.6 1.6-2.7 1.6-1.8 0-3.3-1.5-3.3-3.7s1.5-3.7 3.3-3.7c1.1 0 2.1.6 2.7 1.6h2.3c-.8-2-2.7-3.4-5-3.4z"/>
+                                </svg>
+                            </div>
+                            <span class="toolkit-category-pill">CORE LANGUAGE</span>
+                        </div>
+                        <h3 class="toolkit-card-title">C Language</h3>
+                    </div>
+
+                    <!-- 5. GitHub -->
+                    <div class="toolkit-card reveal-on-scroll">
+                        <div class="toolkit-card-header">
+                            <div class="toolkit-brand-icon github-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#181717" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                                </svg>
+                            </div>
+                            <span class="toolkit-category-pill">VERSION CONTROL</span>
+                        </div>
+                        <h3 class="toolkit-card-title">GitHub</h3>
+                    </div>
+
+                    <!-- 6. Vercel -->
+                    <div class="toolkit-card reveal-on-scroll">
+                        <div class="toolkit-card-header">
+                            <div class="toolkit-brand-icon vercel-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#000000" d="M12 1L24 22H0L12 1z"/>
+                                </svg>
+                            </div>
+                            <span class="toolkit-category-pill">CLOUD HOSTING</span>
+                        </div>
+                        <h3 class="toolkit-card-title">Vercel</h3>
+                    </div>
+
+                    <!-- 7. Replit -->
+                    <div class="toolkit-card reveal-on-scroll">
+                        <div class="toolkit-card-header">
+                            <div class="toolkit-brand-icon replit-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#F26207" d="M2 1.5h9v7H2v-7zm11 7h9v7h-9v-7zM2 15.5h9v7H2v-7z"/>
+                                </svg>
+                            </div>
+                            <span class="toolkit-category-pill">CLOUD SANDBOX</span>
+                        </div>
+                        <h3 class="toolkit-card-title">Replit</h3>
+                    </div>
+
+                    <!-- 8. Microsoft Office -->
+                    <div class="toolkit-card reveal-on-scroll">
+                        <div class="toolkit-card-header">
+                            <div class="toolkit-brand-icon ms-office-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#F25022" d="M1 1h10v10H1z"/>
+                                    <path fill="#7FBA00" d="M13 1h10v10H13z"/>
+                                    <path fill="#00A4EF" d="M1 13h10v10H1z"/>
+                                    <path fill="#FFB900" d="M13 13h10v10H13z"/>
+                                </svg>
+                            </div>
+                            <span class="toolkit-category-pill">PRODUCTIVITY</span>
+                        </div>
+                        <h3 class="toolkit-card-title">Microsoft Office</h3>
+                    </div>
+
+                    <!-- 9. Visual Studio Code -->
+                    <div class="toolkit-card reveal-on-scroll">
+                        <div class="toolkit-card-header">
+                            <div class="toolkit-brand-icon vscode-icon">
+                                <svg viewBox="0 0 24 24" width="28" height="28">
+                                    <path fill="#007ACC" d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.27a1 1 0 0 0 0 1.46l3.415 3.27-3.415 3.27a1 1 0 0 0 0 1.46l1.322 1.21a.999.999 0 0 0 1.276.058l4.12-3.128 9.46 8.63a1.49 1.49 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 19.985V4.015a1.5 1.5 0 0 0-.85-1.428zM18 17.5l-6.8-5.5L18 6.5v11z"/>
+                                </svg>
+                            </div>
+                            <span class="toolkit-category-pill">PRIMARY IDE</span>
+                        </div>
+                        <h3 class="toolkit-card-title">Visual Studio Code</h3>
+                    </div>
+                </div>
+
+                <!-- Professional Skills Card -->
+                <div class="professional-skills-banner reveal-on-scroll">
+                    <div class="prof-skills-header">
+                        <div class="handshake-icon-box">
+                            <span class="handshake-emoji">🤝</span>
+                        </div>
+                        <div class="prof-skills-title-group">
+                            <h3 class="prof-skills-heading">Professional Skills</h3>
+                            <span class="prof-skills-sub">Teamwork & Leadership</span>
+                        </div>
+                    </div>
+                    
+                    <div class="prof-skills-divider"></div>
+
+                    <!-- Horizontal Row of Rounded Pill Tags -->
+                    <div class="prof-pills-row">
+                        <span class="prof-pill">Leadership</span>
+                        <span class="prof-pill">Teamwork</span>
+                        <span class="prof-pill">Team Collaboration</span>
+                        <span class="prof-pill">Communication</span>
+                        <span class="prof-pill">Creative Thinking</span>
+                        <span class="prof-pill">Problem Solving</span>
+                        <span class="prof-pill">Project Coordination</span>
+                        <span class="prof-pill">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             CONTACT SECTION (Universal Real-World Email Submission)
+             ========================================================= -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header reveal-on-scroll">
+                    <span class="section-tag">INITIATE CONTACT</span>
+                    <h2 class="section-heading">Let's Create <span class="gold-serif-italic">Something Amazing.</span></h2>
+                    <div class="heading-gold-line"></div>
+                    <p class="section-subtitle">
+                        Have an opportunity, an idea to discuss, or looking for a dedicated front-end developer? Let's connect and build something extraordinary together.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Left Column: Direct Contact Info Cards -->
+                    <div class="contact-info-column reveal-on-scroll">
+                        <div class="contact-card-premium">
+                            <h3 class="contact-card-title">Direct Inquiries</h3>
+                            <p class="contact-card-desc">
+                                I am actively open to front-end developer roles, technical internships, and collaborative web design projects. Click below to email me directly or send a message through the form.
+                            </p>
+
+                            <div class="contact-methods-list">
+                                <!-- Email (Click opens Gmail compose directly on desktop, or mail app on mobile) -->
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yasalapurevanth97@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-method-row gmail-direct-btn" data-email="yasalapurevanth97@gmail.com">
+                                    <div class="method-icon-box realistic-method-icon">
+                                        <svg viewBox="52 31 88 88" width="24" height="24">
+                                            <path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
+                                            <path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/>
+                                            <path fill="#fbbc04" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/>
+                                            <path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92v16H72"/>
+                                            <path fill="#c5221f" d="M52 59v15l20-15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="method-details">
+                                        <span class="method-name">Email Address</span>
+                                        <span class="method-val">yasalapurevanth97@gmail.com</span>
+                                    </div>
+                                    <div class="method-action">
+                                        <i data-lucide="arrow-up-right"></i>
+                                    </div>
+                                </a>
+
+                                <!-- LinkedIn -->
+                                <a href="https://www.linkedin.com/in/revanth-vardhan-yasalapu-7740693ba/" target="_blank" rel="noopener noreferrer" class="contact-method-row">
+                                    <div class="method-icon-box realistic-method-icon">
+                                        <svg viewBox="0 0 24 24" width="24" height="24">
+                                            <path fill="#0A66C2" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="method-details">
+                                        <span class="method-name">LinkedIn Profile</span>
+                                        <span class="method-val">linkedin.com/in/revanth-vardhan</span>
+                                    </div>
+                                    <div class="method-action">
+                                        <i data-lucide="arrow-up-right"></i>
+                                    </div>
+                                </a>
+
+                                <!-- Instagram -->
+                                <a href="https://www.instagram.com/mrrevanth79?cplk=MXFodW4wbGR5MWtvNg==" target="_blank" rel="noopener noreferrer" class="contact-method-row">
+                                    <div class="method-icon-box realistic-method-icon">
+                                        <svg viewBox="0 0 24 24" width="24" height="24">
+                                            <defs>
+                                                <linearGradient id="ig-grad-contact" x1="0%" y1="100%" x2="100%" y2="0%">
+                                                    <stop offset="0%" stop-color="#FFD600"/>
+                                                    <stop offset="25%" stop-color="#FF7A00"/>
+                                                    <stop offset="50%" stop-color="#FF0069"/>
+                                                    <stop offset="75%" stop-color="#D300C5"/>
+                                                    <stop offset="100%" stop-color="#7638FA"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <rect width="24" height="24" rx="6.5" fill="url(#ig-grad-contact)"/>
+                                            <circle cx="12" cy="12" r="4.3" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+                                            <rect x="4" y="4" width="16" height="16" rx="4.5" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+                                            <circle cx="17.2" cy="6.8" r="1.1" fill="#ffffff"/>
+                                        </svg>
+                                    </div>
+                                    <div class="method-details">
+                                        <span class="method-name">Instagram Profile</span>
+                                        <span class="method-val">instagram.com/mrrevanth79</span>
+                                    </div>
+                                    <div class="method-action">
+                                        <i data-lucide="arrow-up-right"></i>
+                                    </div>
+                                </a>
+
+                                <!-- GitHub -->
+                                <a href="https://github.com/yasalapurevanth97-coder" target="_blank" rel="noopener noreferrer" class="contact-method-row">
+                                    <div class="method-icon-box realistic-method-icon">
+                                        <svg viewBox="0 0 24 24" width="24" height="24">
+                                            <circle cx="12" cy="12" r="12" fill="#181717"/>
+                                            <path fill="#ffffff" d="M12 2.2c-5.4 0-9.8 4.4-9.8 9.8 0 4.3 2.8 8 6.7 9.3.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.3-3.3-1.3-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.2-4.5-1.1-4.5-4.8 0-1.1.4-1.9 1-2.6-.1-.3-.4-1.2.1-2.6 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.5-.3.8 0 1.7.1 2.5.3 1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.6 0 3.7-2.3 4.6-4.5 4.8.4.3.7.9.7 1.8v2.7c0 .3.2.6.7.5 3.9-1.3 6.7-5 6.7-9.3 0-5.4-4.4-9.8-9.8-9.8z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="method-details">
+                                        <span class="method-name">GitHub Repository</span>
+                                        <span class="method-val">github.com/yasalapurevanth97-coder</span>
+                                    </div>
+                                    <div class="method-action">
+                                        <i data-lucide="arrow-up-right"></i>
+                                    </div>
+                                </a>
+
+                                <!-- Location -->
+                                <div class="contact-method-row non-clickable">
+                                    <div class="method-icon-box">
+                                        <i data-lucide="map-pin"></i>
+                                    </div>
+                                    <div class="method-details">
+                                        <span class="method-name">Current Location</span>
+                                        <span class="method-val">Andhra Pradesh, India</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fast Action: Copy Email -->
+                            <div class="quick-copy-box">
+                                <span class="copy-label">Quick Copy Email:</span>
+                                <button class="btn-copy-email" id="copyEmailBtn" data-email="yasalapurevanth97@gmail.com">
+                                    <i data-lucide="copy" id="copyIcon"></i>
+                                    <span id="copyText">Copy Address</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Real-World Contact Form -->
+                    <div class="contact-form-column reveal-on-scroll">
+                        <div class="contact-form-wrapper">
+                            <!-- Live working form submitting directly to yasalapurevanth97@gmail.com -->
+                            <form id="portfolioContactForm" class="portfolio-form" action="https://formsubmit.co/ajax/yasalapurevanth97@gmail.com" method="POST" novalidate>
+                                <!-- FormSubmit Configuration -->
+                                <input type="hidden" name="_subject" value="New Portfolio Message from Revanth's Website">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="text" name="_honey" style="display:none">
+
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label for="userName" class="field-label">Your Name <span class="required">*</span></label>
+                                        <div class="input-container">
+                                            <i data-lucide="user" class="input-icon"></i>
+                                            <input type="text" id="userName" name="name" class="form-input" placeholder="e.g. Alex Henderson" required>
+                                        </div>
+                                        <span class="error-msg" id="nameError"></span>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="userEmail" class="field-label">Your Email <span class="required">*</span></label>
+                                        <div class="input-container">
+                                            <i data-lucide="mail" class="input-icon"></i>
+                                            <input type="email" id="userEmail" name="email" class="form-input" placeholder="e.g. alex@company.com" required>
+                                        </div>
+                                        <span class="error-msg" id="emailError"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="userSubject" class="field-label">Inquiry Subject <span class="required">*</span></label>
+                                    <div class="input-container">
+                                        <i data-lucide="tag" class="input-icon"></i>
+                                        <input type="text" id="userSubject" name="subject" class="form-input" placeholder="e.g. Front-End Project / Opportunity" required>
+                                    </div>
+                                    <span class="error-msg" id="subjectError"></span>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="userMessage" class="field-label">Project Details or Message <span class="required">*</span></label>
+                                    <div class="input-container textarea-container">
+                                        <textarea id="userMessage" name="message" class="form-input form-textarea" rows="5" placeholder="Share a few details regarding your project scope, timeline, or position..." required></textarea>
+                                    </div>
+                                    <span class="error-msg" id="messageError"></span>
+                                </div>
+
+                                <div class="form-status-alert" id="formStatusAlert"></div>
+
+                                <button type="submit" class="btn btn-navy full-width btn-submit" id="submitFormBtn">
+                                    <span id="submitBtnText">Send Message</span>
+                                    <i data-lucide="send" class="btn-icon" id="submitBtnIcon"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER (Clean & Minimal: Option links removed as requested)
+         ========================================================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-top-row">
+                <!-- Footer Brand -->
+                <div class="footer-brand">
+                    <span class="footer-logo">REVANTH <span class="gold-accent">VARDHAN</span></span>
+                    <p class="footer-tagline">
+                        Front-End Developer specializing in clean, modern, and user-friendly digital experiences.
+                    </p>
+                </div>
+
+                <!-- Footer Realistic Socials (Option links removed per user request) -->
+                <div class="footer-socials">
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/revanth-vardhan-yasalapu-7740693ba/" target="_blank" rel="noopener noreferrer" class="footer-social-icon realistic-footer-icon" aria-label="LinkedIn" title="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="#0A66C2" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/mrrevanth79?cplk=MXFodW4wbGR5MWtvNg==" target="_blank" rel="noopener noreferrer" class="footer-social-icon realistic-footer-icon" aria-label="Instagram" title="Instagram">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <defs>
+                                <linearGradient id="ig-grad-footer" x1="0%" y1="100%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#FFD600"/>
+                                    <stop offset="25%" stop-color="#FF7A00"/>
+                                    <stop offset="50%" stop-color="#FF0069"/>
+                                    <stop offset="75%" stop-color="#D300C5"/>
+                                    <stop offset="100%" stop-color="#7638FA"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="24" height="24" rx="6.5" fill="url(#ig-grad-footer)"/>
+                            <circle cx="12" cy="12" r="4.3" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+                            <rect x="4" y="4" width="16" height="16" rx="4.5" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+                            <circle cx="17.2" cy="6.8" r="1.1" fill="#ffffff"/>
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/yasalapurevanth97-coder" target="_blank" rel="noopener noreferrer" class="footer-social-icon realistic-footer-icon" aria-label="GitHub" title="GitHub">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <circle cx="12" cy="12" r="12" fill="#ffffff"/>
+                            <path fill="#181717" d="M12 2.2c-5.4 0-9.8 4.4-9.8 9.8 0 4.3 2.8 8 6.7 9.3.5.1.7-.2.7-.5v-1.8c-2.7.6-3.3-1.3-3.3-1.3-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.2-4.5-1.1-4.5-4.8 0-1.1.4-1.9 1-2.6-.1-.3-.4-1.2.1-2.6 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.5-.3.8 0 1.7.1 2.5.3 1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.6 0 3.7-2.3 4.6-4.5 4.8.4.3.7.9.7 1.8v2.7c0 .3.2.6.7.5 3.9-1.3 6.7-5 6.7-9.3 0-5.4-4.4-9.8-9.8-9.8z"/>
+                        </svg>
+                    </a>
+                    <!-- Gmail (Click to Compose Directly) -->
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yasalapurevanth97@gmail.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon realistic-footer-icon gmail-direct-btn" data-email="yasalapurevanth97@gmail.com" aria-label="Send Email" title="Send Email via Gmail">
+                        <svg viewBox="52 31 88 88" width="20" height="20">
+                            <path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
+                            <path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/>
+                            <path fill="#fbbc04" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/>
+                            <path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92v16H72"/>
+                            <path fill="#c5221f" d="M52 59v15l20-15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom-row">
+                <p class="footer-credit">
+                    Designed & Developed by <strong>REVANTH VARDHAN YASALAPU</strong>
+                </p>
+                <p class="footer-copyright">
+                    &copy; <span id="currentYear">2026</span> All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Initialization -->
+    <script src="script.js"></script>
+</body>
+</html>
