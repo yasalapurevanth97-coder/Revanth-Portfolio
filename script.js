@@ -426,4 +426,33 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // -------------------------------------------------------------------------
+    // 10. RESILIENT IMAGE FALLBACK ENGINE (PREVENTS 404 ON VERCEL & CLOUD HOSTS)
+    // -------------------------------------------------------------------------
+    const fallbackImageRegistry = {
+        'profile.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/profile.jpg',
+        'project-medicore.jpg': 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
+        'project-password-checker.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/project-password-checker.jpg',
+        'project-mandi-mitra.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/project-mandi-mitra.jpg'
+    };
+
+    document.querySelectorAll('img').forEach(img => {
+        const recoverImage = () => {
+            const currentSrc = img.getAttribute('src') || '';
+            for (const [key, fallbackUrl] of Object.entries(fallbackImageRegistry)) {
+                if (currentSrc.includes(key) && img.src !== fallbackUrl) {
+                    img.src = fallbackUrl;
+                    break;
+                }
+            }
+        };
+
+        img.addEventListener('error', recoverImage);
+
+        // If the image failed before the script finished executing
+        if (img.complete && img.naturalWidth === 0) {
+            recoverImage();
+        }
+    });
 });
