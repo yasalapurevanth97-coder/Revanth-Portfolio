@@ -433,6 +433,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const fallbackImageRegistry = {
         'profile.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/profile.jpg',
         'project-medicore.jpg': 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
+        'project-ai-study-planner.jpg': 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80',
+        'project-academic-paper-simplifier.jpg': 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80',
         'project-password-checker.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/project-password-checker.jpg',
         'project-mandi-mitra.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/project-mandi-mitra.jpg'
     };

@@ -8,7 +8,7 @@ A modern, responsive, and elegant personal portfolio website for **Revanth Vardh
 - **Showcase Sections**:
   - **Hero**: Professional two-column layout with portrait photography.
   - **About Me**: Academic excellence (9.03 CGPA at Ramachandra College of Engineering) and core engineering values.
-  - **Featured Projects**: MediCore Smart Healthcare Portal, Password Checker, Mandi Mitra, and EduTech.
+  - **Featured Projects**: MediCore Smart Healthcare Portal, AI Study Planner, Academic Paper Simplifier, Password Security Analyzer, Mandi Mitra Agricultural Platform, and EduTech Student Analytics.
   - **Education**: B.Tech (2025 – Present), Intermediate (2023 – 2025, Sri Chaitanya), SSC (BGTO School).
   - **Achievements & Hackathons**: 3rd Prize IEEE EMBS "OPT FORGE" Hackathon at Vardhaman College, 3rd Prize RHIT Vijayawada, TECHIVE at LBRCE, PRAKALP at RCE.
   - **Digital Creative Toolkit**: Front-End Developer, UI/UX Designer, Anti Gravity, C Language, GitHub, Vercel, Replit, Microsoft Office, Visual Studio Code, and Professional Skills.
