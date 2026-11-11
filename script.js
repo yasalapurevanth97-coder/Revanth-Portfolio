@@ -428,7 +428,128 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------------------------
-    // 10. RESILIENT IMAGE FALLBACK ENGINE (PREVENTS 404 ON VERCEL & CLOUD HOSTS)
+    // 10. CERTIFICATE LIGHTBOX MODAL VIEWER
+    // -------------------------------------------------------------------------
+    const certCards = Array.from(document.querySelectorAll('.certificate-card'));
+    const certModal = document.getElementById('certModal');
+    const certModalClose = document.getElementById('certModalClose');
+    const certModalPrev = document.getElementById('certModalPrev');
+    const certModalNext = document.getElementById('certModalNext');
+    const certModalBadge = document.getElementById('certModalBadge');
+    const certModalTitle = document.getElementById('certModalTitle');
+    const certModalMeta = document.getElementById('certModalMeta');
+    const certModalImg = document.getElementById('certModalImg');
+    const certModalMatter = document.getElementById('certModalMatter');
+
+    if (certModal && certCards.length > 0) {
+        let activeCertIndex = 0;
+        let lastFocusedEl = null;
+        let closeModalTimer = null;
+
+        const renderCertModal = (index) => {
+            const safeIndex = (index + certCards.length) % certCards.length;
+            activeCertIndex = safeIndex;
+            const card = certCards[safeIndex];
+
+            const title = card.dataset.certTitle || '';
+            const badge = card.dataset.certBadge || '';
+            const issuer = card.dataset.certIssuer || '';
+            const date = card.dataset.certDate || '';
+            const imgSrc = card.dataset.certImg || '';
+            const imgFallback = card.dataset.certFallback || '';
+            const matter = card.dataset.certMatter || '';
+
+            certModalBadge.textContent = badge;
+            certModalTitle.textContent = title;
+            certModalMeta.textContent = [issuer, date].filter(Boolean).join(' • ');
+            certModalMatter.textContent = matter;
+
+            certModalImg.onerror = () => {
+                if (imgFallback && certModalImg.getAttribute('src') !== imgFallback) {
+                    certModalImg.src = imgFallback;
+                }
+            };
+            certModalImg.src = imgSrc;
+            certModalImg.alt = title;
+        };
+
+        const openCertModal = (index) => {
+            if (closeModalTimer) {
+                clearTimeout(closeModalTimer);
+                closeModalTimer = null;
+            }
+            lastFocusedEl = document.activeElement;
+            renderCertModal(index);
+            certModal.removeAttribute('hidden');
+            requestAnimationFrame(() => {
+                certModal.classList.add('open');
+            });
+            document.body.style.overflow = 'hidden';
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+            if (certModalClose) certModalClose.focus();
+        };
+
+        const closeCertModal = () => {
+            certModal.classList.remove('open');
+            closeModalTimer = setTimeout(() => {
+                certModal.setAttribute('hidden', '');
+                closeModalTimer = null;
+            }, 220);
+            document.body.style.overflow = '';
+            if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {
+                lastFocusedEl.focus();
+            }
+        };
+
+        certCards.forEach((card, index) => {
+            const previewTrigger = card.querySelector('.cert-preview-trigger');
+            const openBtn = card.querySelector('.cert-open-btn');
+
+            if (previewTrigger) {
+                previewTrigger.addEventListener('click', () => openCertModal(index));
+                previewTrigger.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openCertModal(index);
+                    }
+                });
+            }
+
+            if (openBtn) {
+                openBtn.addEventListener('click', () => openCertModal(index));
+            }
+        });
+
+        if (certModalClose) {
+            certModalClose.addEventListener('click', closeCertModal);
+        }
+
+        if (certModalPrev) {
+            certModalPrev.addEventListener('click', () => renderCertModal(activeCertIndex - 1));
+        }
+
+        if (certModalNext) {
+            certModalNext.addEventListener('click', () => renderCertModal(activeCertIndex + 1));
+        }
+
+        certModal.addEventListener('click', (e) => {
+            if (e.target === certModal) {
+                closeCertModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!certModal.classList.contains('open')) return;
+            if (e.key === 'Escape') closeCertModal();
+            if (e.key === 'ArrowLeft') renderCertModal(activeCertIndex - 1);
+            if (e.key === 'ArrowRight') renderCertModal(activeCertIndex + 1);
+        });
+    }
+
+    // -------------------------------------------------------------------------
+    // 11. RESILIENT IMAGE FALLBACK ENGINE (PREVENTS 404 ON VERCEL & CLOUD HOSTS)
     // -------------------------------------------------------------------------
     const fallbackImageRegistry = {
         'profile.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/profile.jpg',
@@ -436,7 +557,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'project-ai-study-planner.jpg': 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80',
         'project-academic-paper-simplifier.jpg': 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80',
         'project-password-checker.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/project-password-checker.jpg',
-        'project-mandi-mitra.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/project-mandi-mitra.jpg'
+        'project-mandi-mitra.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/project-mandi-mitra.jpg',
+        'cert-optiforge-hackathon.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/cert-optiforge-hackathon.jpg',
+        'cert-rashtriya-innovation.jpg': 'https://raw.githubusercontent.com/yasalapurevanth97-coder/website/main/cert-rashtriya-innovation.jpg'
     };
 
     document.querySelectorAll('img').forEach(img => {
